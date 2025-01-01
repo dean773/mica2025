@@ -1,0 +1,187 @@
+/* ************* Global styles ************* */
+
+body, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.container {
+    width: 92%;
+    margin: auto;
+    height: 100%;
+    border: 2px solid red;
+    overflow: hidden;
+}   
+
+
+/* Container */
+.header-container {
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center; /* Align items vertically */
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    background-color: #f8f9fa;
+    border-top: 0px;
+    height: 50px;
+}
+/* ************* Media queries ************* */
+
+/* tablet 
+@media only screen and (min-width: 576px) {
+    .container {
+        width: 540px;
+    }
+}*/
+
+/* desktop */
+@media only screen and (min-width: 1200px) {
+    .container {
+        width: 1140px;
+    }
+/* top-bar */}
+
+/* Header Styling */
+header {
+    background-color: #f8f9fa; /* Light background */
+    
+    
+    z-index: 1000; /* Ensures it stays on top of other elements */
+}
+
+/* 
+.container {
+    display: flex;
+    justify-content: space-between; Space between logo and menu 
+    align-items: center; Align items vertically 
+    width: 90%;
+    margin: 0 auto;
+}*/
+
+/* Logo */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Menu and Nav Links */
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links ul {
+    display: flex;
+    gap: 1.5rem; /* Space between links */
+}
+
+.nav-links ul li a {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    align-items: center;
+    position: center;
+    
+    display: flex;
+}
+
+.nav-links ul li a:hover {
+    color: #ff5722; /* Accent color on hover */
+}
+
+.hidden_block{
+    display: absolute;
+    height: 50px;
+    width: auto;
+}
+
+
+/* slider */
+
+/* set scroll animation */
+/* RULES: calc(${width of slide-item + margin left + margin right}px * ${total slide-item}) */
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-280px * 4)); }
+}
+
+@keyframes scroll-right {
+    0% { transform: translateX(calc(-280px * 4)); }
+    100% { transform: translateX(0); }
+}
+
+.slider {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%; /* You can adjust or delete this line */
+}
+
+/* RULES: calc(${width of slide-item + margin left + margin right}px * ${(total slide)*2}) */
+.slide-track {
+    display: flex;
+    width: calc(280px * 8);
+}
+
+.slide-track.left{
+    animation: scroll-left 25s linear infinite; /* You can set the time to any number of seconds */
+}
+
+.slide-track.right{
+    animation: scroll-right 25s linear infinite; /* You can set the time to any number of seconds */
+}
+
+.slide-item {
+    width: 250px;
+    margin: 15px;
+    border-radius: 10px;
+    transition: transform 0.5s, box-shadow 0.5s; /* Added transition for smooth effect */
+}
+
+/* Hero section */
+
+.hero {
+    height: 700px;
+    background-color: red;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center; /* Centers vertically */
+    display: flex;
+    position: relative;
+
+}
+
+/* menu section */
+
+.menu-section {
+    height: 700px;
+    background-color: green;
+}
+
+/* about */
+
+.about-section{
+    height: 700px;
+    background-color: yellow;
+}
+
+/* catering */
+
+.catering-section{
+    height: 700px;
+    background-color: blue;
+}
+
+/* contact */
+
+.contact-section{
+    height: 300px;
+    background-color: red;
+}
