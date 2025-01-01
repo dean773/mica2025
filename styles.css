@@ -18,17 +18,14 @@ body, ul, li, a {
 
 
 /* Container */
+/* Header Container */
 .header-container {
-    z-index: 1000;
     display: flex;
-    justify-content: space-between; /* Space between logo and menu */
-    align-items: center; /* Align items vertically */
+    justify-content: center;
+    align-items: center;
     width: 100%;
     margin: 0 auto;
-    position: fixed;
-    background-color: #f8f9fa;
-    border-top: 0px;
-    height: 50px;
+    height: 53px; /* Center the container */
 }
 /* ************* Media queries ************* */
 
@@ -48,10 +45,13 @@ body, ul, li, a {
 
 /* Header Styling */
 header {
-    background-color: #f8f9fa; /* Light background */
-    
-    
-    z-index: 1000; /* Ensures it stays on top of other elements */
+    background-color: #ffffff; /* White background */
+    position: fixed; /* Stays at the top of the page */
+    top: 0;
+    width: 100%; /* Full width */
+    z-index: 1000; /* On top of other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 0.5rem 0;
 }
 
 /* 
@@ -63,7 +63,8 @@ header {
     margin: 0 auto;
 }*/
 
-/* Logo */
+
+/* Logo Styling */
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
@@ -74,32 +75,51 @@ header {
 .menu {
     display: flex;
     align-items: center;
+    justify-content: center; /* Center links horizontally */
 }
 
 .nav-links ul {
+    list-style: none;
     display: flex;
-    gap: 1.5rem; /* Space between links */
+    gap: 6rem; /* Space between links */
 }
 
 .nav-links ul li a {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #333;
     font-weight: 500;
-    transition: color 0.3s ease;
-    align-items: center;
-    position: center;
-    
-    display: flex;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth hover transition */
+    justify-content: center;
 }
 
 .nav-links ul li a:hover {
     color: #ff5722; /* Accent color on hover */
 }
 
-.hidden_block{
-    display: absolute;
+/* Spacer for Fixed Header */
+body {
+    padding-top: 70px; /* Prevents content from overlapping with fixed header */
+}
+
+/* Optional Hidden Block Styling */
+.hidden_block {
+    display: none; /* Not visible by default */
     height: 50px;
     width: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links ul {
+        flex-direction: column; /* Stack links vertically */
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .header-container {
+        flex-direction: column; /* Stack logo and menu */
+    }
 }
 
 
