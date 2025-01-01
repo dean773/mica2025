@@ -36,6 +36,57 @@ body, ul, li, a {
     }
 }*/
 
+.sidebox {
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    float: left;
+    width: 400px;
+    height: 430px;
+    padding: 15px;
+    margin: 10px;
+    background-color: #f4a261;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.hero-details {
+    background: linear-gradient(135deg, #f4a261, #e76f51); /* Elegant gradient */
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    max-width: 800px;
+    margin: 40px auto;
+    position: relative;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adds glow effect */
+}
+
+.hero-details::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 3px solid #e9c46a; /* Golden border for elegance */
+    border-radius: 15px;
+    z-index: -1; /* Keeps it behind the content */
+}
+
+
+
+
 /* desktop */
 @media only screen and (min-width: 1200px) {
     .container {
@@ -49,7 +100,7 @@ header {
     position: fixed; /* Stays at the top of the page */
     top: 0;
     width: 100%; /* Full width */
-    z-index: 1000; /* On top of other elements */
+    z-index: 1100; /* On top of other elements */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     padding: 0.5rem 0;
 }
@@ -119,6 +170,39 @@ body {
     
     .header-container {
         flex-direction: column; /* Stack logo and menu */
+    }
+}
+
+/* Hamburger Button */
+#menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav-links ul {
+        display: flex;
+        flex-direction: row; /* Keep links horizontal */
+        justify-content: space-around; /* Distribute links evenly */
+        align-items: center;
+        position: static; /* Remove absolute positioning */
+        width: 100%; /* Ensure it spans the width */
+        background: #fff;
+        padding: 0.5rem 0; /* Add some padding for better touch interaction */
+    }
+
+    .nav-links ul li a {
+        font-size: 1.5rem; /* Slightly smaller font size */
+        padding: 0.5rem; /* Add spacing for easier clicking */
+    }
+
+    #menu-toggle {
+        display: none; /* Hide hamburger menu since links remain visible */
     }
 }
 

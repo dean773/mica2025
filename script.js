@@ -28,3 +28,7 @@ sliders.forEach((slider, index) => {
     img.className = "slide-item";
     slider.appendChild(img);
   })*/
+  document.getElementById("menu-toggle").addEventListener("click", function () {
+    const navLinks = document.querySelector(".nav-links ul");
+    navLinks.classList.toggle("active");
+});
