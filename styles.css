@@ -16,6 +16,11 @@ body, ul, li, a {
     overflow: hidden;
 }   
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 
 /* Container */
 /* Header Container */
@@ -90,7 +95,7 @@ body, ul, li, a {
 /* desktop */
 @media only screen and (min-width: 1200px) {
     .container {
-        width: 1140px;
+        width: 1400px;
     }
 /* top-bar */}
 
@@ -259,7 +264,7 @@ body {
     align-items: center; /* Centers vertically */
     display: flex;
     position: relative;
-
+    
 }
 
 /* menu section */

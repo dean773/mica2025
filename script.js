@@ -1,5 +1,5 @@
 // add the name of each image title here
-const imageNames = ["1.jpg", "2.jpg", "3.jpg", "4.jpg","1.jpg", "2.jpg", "3.jpg", "4.jpg"];
+const imageNames = ["counter.jpeg", "2.jpg", "3.jpg", "4.jpg","inside1.jpeg", "2.jpg", "3.jpg", "4.jpg"];
 
 const sliderItems = imageNames.concat(imageNames);
 const sliders = document.querySelectorAll(".slide-track");
