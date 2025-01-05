@@ -1,63 +1,51 @@
 /* ************* Global styles ************* */
+/* Importing Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,700;1,400;1,500;1,600&display=swap');
 
-body, ul, li, a {
+
+/* Body styling with Poppins font */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
 }
 
-.container {
-    width: 92%;
-    margin: auto;
-    height: 100%;
-    border: 2px solid red;
-    overflow: hidden;
-}   
-
-html {
-    scroll-behavior: smooth;
+/* Apply Miniver font to headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'a', cursive;
+    color: #ffffff; /* You can choose a color for the headings */
+    padding: 0px;
+    margin: 10px 0;
+    background-color: #f4a261; /* Light orange background */
+    border: 2px solid #e76f51; /* Darker orange border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
 }
 
-
-
-/* Container */
-/* Header Container */
-.header-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 0 auto;
-    height: 53px; /* Center the container */
-}
-/* ************* Media queries ************* */
-
-/* tablet 
-@media only screen and (min-width: 576px) {
-    .container {
-        width: 540px;
-    }
-}*/
-
-.sidebox {
-    position: absolute;
-    top: 70px;
-    left: 10px;
-    float: left;
-    width: 400px;
-    height: 430px;
-    padding: 15px;
-    margin: 10px;
-    background-color: #f4a261;
-    color: white;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+/* Paragraph styling with Poppins */
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #444; /* Text color */
 }
 
+/* Styling for .title using Miniver font */
+.title {
+    font-family: 'a', cursive;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adds glow effect */
+}
+
+/* Hero details styling with Poppins font */
 .hero-details {
+    font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #f4a261, #e76f51); /* Elegant gradient */
     color: #fff;
     text-align: center;
@@ -69,14 +57,23 @@ html {
     position: relative;
 }
 
-.title {
-    font-size: 3rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adds glow effect */
+/* Sidebox styling */
+.sidebox {
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    width: 400px;
+    height: 430px;
+    padding: 15px;
+    margin: 10px;
+    background-color: #f4a261; /* Light orange color */
+    color: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
+/* Hero details border */
 .hero-details::before {
     content: '';
     position: absolute;
@@ -88,7 +85,6 @@ html {
     border-radius: 15px;
     z-index: -1; /* Keeps it behind the content */
 }
-
 
 
 
@@ -141,17 +137,19 @@ header {
 }
 
 .nav-links ul li a {
-    font-size: 1.5rem;
-    color: #333;
-    font-weight: 500;
+    font-size: 1.5rem; /* Default font size */
+    color: #333; /* Default color */
+    font-weight: 500; /* Font weight */
     text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Smooth hover transition */
-    justify-content: center;
+    transition: color 0.3s ease, font-size 0.3s ease; /* Smooth transition for both color and font-size */
+    justify-content: center; /* Center alignment */
 }
 
 .nav-links ul li a:hover {
-    color: #ff5722; /* Accent color on hover */
+    color: #662a7b; /* Accent color on hover */
+    font-size: 1.8rem; /* Increase font size on hover */
 }
+
 
 /* Spacer for Fixed Header */
 body {
@@ -200,65 +198,90 @@ body {
         background: #fff;
         padding: 0.5rem 0; /* Add some padding for better touch interaction */
     }
+}
+  /* Target only links within the .nav-links container */
+.nav-links ul li a {
+    font-size: 1.5rem; /* Default font size for navigation links */
+    color: #333; /* Default color */
+    font-weight: 500; /* Font weight */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease, font-size 0.3s ease; /* Smooth transition for color and size */
+    justify-content: center; /* Center alignment */
+}
 
-    .nav-links ul li a {
-        font-size: 1.5rem; /* Slightly smaller font size */
-        padding: 0.5rem; /* Add spacing for easier clicking */
-    }
+.nav-links ul li a:hover {
+    color: #662a7b; /* Accent color on hover */
+    font-size: 1.8rem; /* Increase font size on hover */
+}
 
     #menu-toggle {
         display: none; /* Hide hamburger menu since links remain visible */
     }
-}
-
-
 /* slider */
-
-/* set scroll animation */
-/* RULES: calc(${width of slide-item + margin left + margin right}px * ${total slide-item}) */
-@keyframes scroll-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-280px * 4)); }
-}
-
-@keyframes scroll-right {
-    0% { transform: translateX(calc(-280px * 4)); }
-    100% { transform: translateX(0); }
-}
-
+/* General Slider Styling */
 .slider {
     margin: auto;
     overflow: hidden;
     position: relative;
-    width: 100%; /* You can adjust or delete this line */
-}
-
-/* RULES: calc(${width of slide-item + margin left + margin right}px * ${(total slide)*2}) */
-.slide-track {
+    width: 100%;
+    height: 200px; /* Match the height of the slide items */
+  }
+  
+  .slide-track {
     display: flex;
-    width: calc(280px * 8);
-}
-
-.slide-track.left{
-    animation: scroll-left 25s linear infinite; /* You can set the time to any number of seconds */
-}
-
-.slide-track.right{
-    animation: scroll-right 25s linear infinite; /* You can set the time to any number of seconds */
-}
-
-.slide-item {
+    animation-timing-function: linear;
+  }
+  
+  .slide-item {
     width: 250px;
     margin: 15px;
     border-radius: 10px;
-    transition: transform 0.5s, box-shadow 0.5s; /* Added transition for smooth effect */
-}
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Keyframes for left-to-right scrolling */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-1 * (250px + 15px + 15px) * 12));
+    }
+  }
+  
+  /* Keyframes for right-to-left scrolling */
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(calc(-1 * (250px + 15px + 15px) * 12));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Slider-specific animations */
+  .slider:first-child .slide-track {
+    animation: scroll-left 120s linear infinite;
+  }
+  
+  .slider:nth-child(2) .slide-track {
+    animation: scroll-right 120s linear infinite;
+  }
+  
+  .slider:last-child .slide-track {
+    animation: scroll-left 120s linear infinite;
+  }
+  
+  
+  
+  
 
 /* Hero section */
 
 .hero {
     height: 700px;
-    background-color: red;
+    background-color: rgb(85, 26, 53);
     overflow: hidden;
     justify-content: center;
     align-items: center; /* Centers vertically */
@@ -267,12 +290,12 @@ body {
     
 }
 
-/* menu section */
+/* menu section 
 
 .menu-section {
     height: 700px;
     background-color: green;
-}
+}*/
 
 /* about */
 
@@ -293,4 +316,101 @@ body {
 .contact-section{
     height: 300px;
     background-color: red;
+}
+/* Menu Section Styling */
+/* Menu Section Styling */
+/* Menu Section */
+.menu-section {
+    background-color: #603563; /* Light Brown Background */
+    padding: 40px 20px;
+    text-align: center;
+    min-height: auto; /* Allow height to grow based on content */
+    overflow: visible; /* Ensure content is visible even if it exceeds the height */
+}
+
+/* Container to center content */
+.menu-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Section Headers */
+.menu-section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #4b2e0e; /* Coffee Brown for header text */
+    margin-bottom: 20px;
+    width: 100%; /* Ensure it takes up the full width in each section */
+    text-transform: uppercase; /* Uppercase styling for headers */
+    letter-spacing: 2px; /* Slight letter spacing for emphasis */
+}
+
+/* Column Layout */
+.menu-section section {
+    width: 48%; /* Each section takes up 48% of the container's width, creating two columns */
+    margin-bottom: 40px;
+    box-sizing: border-box;
+}
+
+/* List Styling */
+.menu-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-section ul li {
+    background-color: #f3f4f6; /* Light gray background for items */
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px; /* Rounded corners */
+    border: 1px solid #e1e1e1; /* Light gray border */
+    font-size: 1.2rem;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.menu-section ul li:hover {
+    background-color: #c28c6e; /* Oak Wood background on hover */
+    color: #fff; /* White text on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+/* Section Descriptions */
+.menu-section p {
+    font-size: 1.1rem;
+    color: #fff; /* Light color for description text */
+    margin-bottom: 20px;
+    font-style: italic; /* Italicized text for descriptions */
+}
+
+/* Container with spacing between columns */
+.menu-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between columns */
+}
+
+/* Section Styling with flexible sizing */
+.menu-section section {
+    flex: 1 1 48%; /* Ensure the sections evenly take up space */
+    margin-bottom: 20px;
+}
+
+/* Sandwich header styling */
+.sandwichheader {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4b2e0e; /* Coffee Brown for sandwich header */
+    margin-bottom: 10px;
+    text-align: center;
+    border-bottom: 2px solid #4b2e0e; /* Underline effect for header */
+    padding-bottom: 10px;
 }
